@@ -1,14 +1,8 @@
-You're right! Let me give you a clean, properly rendered version of the README with a **well-formatted project structure** block and everything else aligned perfectly for GitHub or Markdown preview.
-
----
-
-### ✅ Final Clean & Ready-to-Copy `README.md`
-
 ```markdown
 # 🩺 AI Health Chatbot 🇹🇿 (Swahili + English)  
-> Powered by [PAWA AI](https://pawa.ai) | Flask + React + TTS  
+> Powered by [PAWA AI](https://pawa-ai.com) | Flask + React + TTS  
 
-A simple, modern AI chatbot that helps users ask **health-related questions** in **Swahili or English**. Built with Flask, React (Vite), and PAWA AI. It can also **read out responses** using text-to-speech (TTS)!
+A simple, modern AI chatbot that helps users ask health-related questions in Swahili or English. Built with Flask, React (Vite), and PAWA AI. It can also read out responses using text-to-speech (TTS)
 
 ---
 
@@ -25,9 +19,7 @@ A simple, modern AI chatbot that helps users ask **health-related questions** in
 
 ## 📁 Project Structure
 
-```
-
-ai-health-bot/
+```ai-health-bot/
 ├── backend/                  # Flask API
 │   ├── app.py                # Main server code (chat + TTS)
 │   └── .env                  # Contains your PAWA\_API\_KEY
@@ -38,21 +30,19 @@ ai-health-bot/
 │       ├── main.jsx          # App entry point
 │       └── index.css         # Styles for the chat UI
 └── README.md                 # This file
-
 ````
 
 ---
-
 ## ⚙️ Backend Setup (Flask + PAWA AI)
 
 ### ✅ Prerequisites
 
 - Python 3.8+
-- [PAWA AI API Key](https://pawa.ai)
+- [PAWA AI API Key](https://pawa-ai.com)
 - `pip` installed
 
 ### 📦 Installation
-
+---
 ```bash
 cd backend
 python -m venv venv
