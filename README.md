@@ -111,7 +111,6 @@ npm run dev
 
 * [ ] Save chat history to local storage or DB
 * [ ] Add voice input (speech-to-text)
-* [ ] Add offline fallback FAQ for poor connectivity
 * [ ] Deploy backend to **Render**, frontend to **Netlify**
 * [ ] Mobile-first design + PWA support
 
@@ -119,7 +118,7 @@ npm run dev
 
 ## 👏 Credits
 
-* 🧠 [PAWA AI](https://pawa.ai) – African-built AI platform
+* 🧠 [PAWA AI](https://pawa-ai.com) – African-built AI platform
 * 🐍 Flask – Backend
 * ⚛️ React + Vite – Frontend
 * 🎧 PAWA TTS – Audio response
