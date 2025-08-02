@@ -23,41 +23,51 @@ function App() {
     const data = await res.json();
     const botMessage = data.response || data.error;
 
-    // Add question + response to chat history
+    // Add to chat history
     setChatHistory((prev) => [...prev, { user: userMessage, bot: botMessage }]);
+
+    // 🔊 Speak the bot message
+    speak(botMessage);
 
     setLoading(false);
   };
 
-  // 👇 Auto-scroll to latest message
+  // 👇 Auto-scroll to bottom
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [chatHistory]);
 
+  // ✅ Use browser speech synthesis
+  const speak = (text) => {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = /[^\x00-\x7F]+/.test(text) ? "sw-TZ" : "en-US";
+    synth.speak(utterance);
+  };
+
   return (
     <div className="chat-container">
-      <h1 className="chat-title">🤖 AI SUZA Chatbot</h1>
-      <p style={{textAlign:"center"}}>This is PAWA intagrated chartbot ai</p>
+      <h1 className="chat-title">🩺 AI Health Assistance</h1>
+      <p>PAWA AI Integred chartbot</p>
       <hr />
-      {/* Chat history */}
+
       <div className="chat-history">
-        {chatHistory.map((chat, index) => (
-          <div key={index} className="chat-bubble">
+        {chatHistory.map((chat, idx) => (
+          <div key={idx} className="chat-bubble">
             <div className="user-message"><strong>👤 You:</strong> {chat.user}</div>
             <div className="bot-response"><strong>🤖 Bot:</strong> {chat.bot}</div>
           </div>
         ))}
         <div ref={chatEndRef} />
       </div>
+      <hr />
 
-      {/*  Input area */}
       <textarea
         className="chat-input"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Ask your health question here..."
       />
-
       <button
         className="chat-button"
         onClick={sendMessage}
